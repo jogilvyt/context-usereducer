@@ -1,0 +1,23 @@
+.wrapper {
+  background-color: #eee;
+  padding: 20px;
+  width: 400px;
+}
+
+.list {
+  padding: 0;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+}
+
+.input {
+  flex-grow: 1;
+}
