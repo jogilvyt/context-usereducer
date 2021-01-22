@@ -1,12 +1,13 @@
 import ToDoItem from "../ToDoItem";
+import useToDos from "../useToDos";
 
-const ToDoList = ({ todos, handleDelete }) => {
+const ToDoList = () => {
+  const [todos] = useToDos();
+
   return (
     <ul className="list">
       {todos.length ? (
-        todos.map(item => (
-          <ToDoItem item={item} handleDelete={handleDelete} key={item.id} />
-        ))
+        todos.map(item => <ToDoItem item={item} key={item.id} />)
       ) : (
         <p>There is nothing left to do!</p>
       )}

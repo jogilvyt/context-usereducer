@@ -1,6 +1,11 @@
 import { useState } from "react";
+import { v4 as uuid } from "uuid";
 
-const Form = ({ handleSubmit }) => {
+import useToDos from "../useToDos";
+import { addTodo } from "../state/actions";
+
+const Form = () => {
+  const [, dispatch] = useToDos();
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = e => {
@@ -9,7 +14,7 @@ const Form = ({ handleSubmit }) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    handleSubmit(inputValue);
+    dispatch(addTodo({ id: uuid(), value: inputValue }));
     setInputValue("");
   };
 
